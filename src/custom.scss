@@ -1,0 +1,193 @@
+// Override default variables before the import
+$body-color: #000;
+
+$theme-colors: (
+  "purple-bold": #774699,
+  "purple-med": #916CB7,
+  "purple-light": #AC94D2,
+  "grey-light": #F2F2F2,
+  "grey-med": #E0E0E0,
+  "light": #F8F8F8,
+  "dark": #342E39,
+  "purple-translucent": #146faf,
+);
+
+@import '~bootstrap/scss/bootstrap.scss';
+
+body {
+  background-color: map-get($theme-colors, "light");
+}
+
+.App {
+  text-align: center;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  font-weight: 400;
+  font-size: 1.1rem;
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.5rem;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Cormorant Garamond', serif;
+  margin-bottom: 1.2rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+
+  @include media-breakpoint-up(md) {
+    font-size: 4.5rem;
+  }
+}
+
+h2 {
+  font-size: 2.1rem;
+
+  @include media-breakpoint-up(md) {
+    font-size: 3.4rem;
+  }
+}
+
+h3 {
+  font-size: 1.8rem;
+
+  @include media-breakpoint-up(md) {
+    font-size: 2.8rem;
+  }
+}
+
+h4 {
+  font-size: 1.6rem;
+}
+
+img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.letter {
+  img {
+    max-height: 350px;
+    @include media-breakpoint-up(lg) {
+      max-height: 600px;
+    }
+  }
+}
+
+.teamBlock {
+  .profile {
+    transition: .15s ease-out;
+    background-color: map-get($theme-colors, "grey-med");
+
+    &:hover {
+      background-color: map-get($theme-colors, "purple-light");
+    }
+  }
+}
+
+.contact {
+  .mail {
+    color: map-get($theme-colors, "purple-med");
+    font-weight: bold;
+  }
+}
+
+.navBar {
+  .logo {
+    font-size: 1.2rem;
+    font-family: 'Cormorant Garamond', serif;
+
+    @include media-breakpoint-up(md) {
+      font-size: 2rem;
+    }
+
+    &:hover {
+      color: inherit;
+      text-decoration: inherit;
+    }
+  }
+
+  .navLink {
+    padding-bottom: 0.1em;
+    font-size: .8rem;
+    letter-spacing: 3px;
+
+    &:hover {
+      color: inherit;//map-get($theme-colors, "info");
+      text-decoration: inherit;
+      opacity: .7;
+    }
+
+    &.active {
+      border-bottom: 1px solid;
+    }
+  }
+}
+
+.block {
+  padding-top: 6.6vmax;
+  padding-bottom: 6.6vmax;
+
+  // >:first-child {
+  //   padding-top: 17px;
+  // }
+}
+
+.primary {
+  color: map-get($theme-colors, "light");
+  background-color: map-get($theme-colors, "purple-med");
+
+  .btn {
+    color: map-get($theme-colors, "light");
+    background-color: map-get($theme-colors, "purple-med");
+
+    &:active {
+      color: map-get($theme-colors, "purple-med") ;
+      background-color: map-get($theme-colors, "light") ;
+      border-color: map-get($theme-colors, "purple-med") ;
+    }
+    &:hover {
+      border-color: map-get($theme-colors, "purple-med"); 
+    }
+  }
+}
+
+.secondary {
+  color: map-get($theme-colors, "dark");
+  background-color: map-get($theme-colors, "light");
+
+  .btn {
+    color: map-get($theme-colors, "light");
+    background-color: map-get($theme-colors, "purple-med");
+
+    &:active {
+      color: map-get($theme-colors, "light") ;
+      background-color: map-get($theme-colors, "purple-med") ;
+      border-color: map-get($theme-colors, "light") ;
+    }
+    &:hover {
+      border-color: map-get($theme-colors, "light"); 
+    }
+  }
+}
+
+.accent {
+  color: map-get($theme-colors, "light");
+  background-color: map-get($theme-colors, "info");
+
+  .btn {
+    color: map-get($theme-colors, "info");
+    background-color: map-get($theme-colors, "light");
+
+    &:active {
+      color: map-get($theme-colors, "light") ;
+      background-color: map-get($theme-colors, "info") ;
+      border-color: map-get($theme-colors, "light") ;
+    }
+    &:hover {
+      border-color: map-get($theme-colors, "light"); 
+    }
+  }
+}
