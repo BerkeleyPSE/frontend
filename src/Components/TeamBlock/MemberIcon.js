@@ -19,7 +19,7 @@ import Button from '../Button';
 //   </div>
 // )
 
-class BrotherIcon extends React.Component {
+class MemberIcon extends React.Component {
   constructor(props) {
     super(props);
     this.state = { src: `https://res.cloudinary.com/berkeleypse-tech/image/upload/f_auto,fl_force_strip.progressive,q_auto:best/brothers/${this.props.brother.key}.png` };
@@ -60,4 +60,4 @@ class BrotherIcon extends React.Component {
 }
 
 
-export default BrotherIcon;
+export default MemberIcon;

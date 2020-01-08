@@ -3,7 +3,7 @@ import '../../custom.scss';
 import './styles.scss';
 import Block from '../Block.js';
 import Button from '../Button';
-import BrotherIcon from './BrotherIcon.js'
+import MemberIcon from './MemberIcon.js'
 
 
 
@@ -45,7 +45,7 @@ const TeamBlock = props => {
         {
           data &&
             <div className="d-flex flex-wrap justify-content-around justify-content-md-between">
-              { data.map((brother, i) => <BrotherIcon i={i} brother={brother}/>) }
+              { data.map((brother, i) => <MemberIcon i={i} brother={brother}/>) }
               { filler }
             </div>
         }

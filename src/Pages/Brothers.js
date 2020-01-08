@@ -26,7 +26,7 @@ class Home extends React.Component {
 
   async getActives() {
     try {
-      const rsp = await axios.get("http://api.berkeleypse.org/brothers/all");
+      const rsp = await axios.get("http://api.berkeleypse.org/brothers/all", { crossdomain: true });
       const rv = rsp.data.data;
       rv.sort(sortLastName);
       console.log(rv);
