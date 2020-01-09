@@ -2,11 +2,13 @@
 $body-color: #000;
 
 $theme-colors: (
-  "purple-bold": #774699,
+  "purple-deep": #2A004C,
+  "purple-dark": #774699,
   "purple-med": #916CB7,
   "purple-light": #AC94D2,
-  "grey-light": #F2F2F2,
+  "grey-light": #EFEFEF,
   "grey-med": #E0E0E0,
+  "grey-dark": #828282,
   "light": #F8F8F8,
   "dark": #342E39,
   "purple-translucent": #146faf,
@@ -27,6 +29,7 @@ body {
   font-size: 1.1rem;
   font-family: 'Raleway', sans-serif;
   line-height: 1.5rem;
+  color: map-get($theme-colors, "dark");
 }
 
 h1, h2, h3, h4, h5 {
@@ -59,7 +62,14 @@ h3 {
 }
 
 h4 {
-  font-size: 1.6rem;
+  color: map-get($theme-colors, "grey-dark");
+  font-size: 1.125rem;
+  letter-spacing: inherit;
+
+  @include media-breakpoint-up(md) {
+    font-size: 1.4rem;
+    letter-spacing: 1.5px;
+  }
 }
 
 img {
@@ -87,6 +97,32 @@ img {
   }
 }
 
+.tableBlock {
+  .header {
+    background-color: map-get($theme-colors, "grey-light");
+    border-width: 1px 0 1px 0;
+    border-color: map-get($theme-colors, "grey-dark");
+    border-style: solid;
+  }
+  .entry{
+    border-width: 1px 0 0 0;
+    border-color: map-get($theme-colors, "grey-med");
+    border-style: solid;
+    &.first {
+      border-width: 0;
+    }
+
+    .inner {
+      div {
+        &:first-child {
+          font-weight: bold;
+          color: map-get($theme-colors, "purple-deep");
+        }
+      }
+    }
+  }
+}
+
 .contact {
   .mail {
     color: map-get($theme-colors, "purple-med");
@@ -110,7 +146,7 @@ img {
   }
 
   .navLink {
-    padding-bottom: 0.1em;
+    padding-bottom: 0.2em;
     font-size: .8rem;
     letter-spacing: 3px;
 

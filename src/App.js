@@ -8,7 +8,7 @@ import {
   useParams
 } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { Home, ApplyInfo, About, Brothers } from './Pages'
+import { Home, ApplyInfo, About, Brothers, Careers } from './Pages'
 
 class App extends React.Component {
   render() {
@@ -31,8 +31,11 @@ class App extends React.Component {
             <Route path="/brothers">
               <BrothersSwitch/>
             </Route>
+            <Route path="/careers/:year">
+              <CareersYear />
+            </Route>
             <Route path="/careers">
-              <Home />
+              <Careers />
             </Route>
             <Route path="/apply-info">
               <ApplyInfo />
@@ -52,11 +55,10 @@ class App extends React.Component {
 
 function BrothersSwitch() {
   let match = useRouteMatch();
-
   return (
     <Switch>
       <Route path={`${match.path}/:brotherId`}>
-        <Home />
+        <Brothers />
       </Route>
       <Route path={match.path}>
         <Brothers/>
@@ -68,6 +70,25 @@ function BrothersSwitch() {
 function BrotherProfile() {
   let { brotherId } = useParams();
   return <Home brotherId={ brotherId } />
+}
+
+function CareersSwitch() {
+  let match = useRouteMatch();
+  return (
+    <Switch>
+      <Route path={`${match.path}/:year`}>
+        <CareersYear />
+      </Route>
+      <Route path={match.path}>
+        <Careers />
+      </Route>
+    </Switch>
+  );
+}
+
+function CareersYear() {
+  let { year } = useParams();
+  return <Careers year={ year } />
 }
 
 

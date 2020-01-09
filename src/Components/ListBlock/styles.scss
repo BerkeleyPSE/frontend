@@ -1,9 +1,13 @@
-.keyValueImg {
-  >div {
-    max-width: 350px;
-  }
+.listBlock {
+  .keyValueImg {
+    >div {
+      max-width: 350px;
+    }
 
-  img {
-    max-width: 225px;
+    img {
+      max-width: 225px;
+    }
   }
 }
+
+

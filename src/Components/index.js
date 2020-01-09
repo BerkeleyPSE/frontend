@@ -10,6 +10,8 @@ import PageTemplate from './PageTemplate.js';
 import Letter from './Letter';
 import InfoBlock from './InfoBlock';
 import TeamBlock from './TeamBlock';
+import Table from './Table';
+import SubNavBar from './SubNavBar';
 
 
 export {
@@ -24,5 +26,7 @@ export {
   PageTemplate,
   Letter,
   InfoBlock,
-  TeamBlock
+  TeamBlock,
+  Table,
+  SubNavBar
 };

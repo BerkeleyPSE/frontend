@@ -1,0 +1,21 @@
+.subNavBar {
+  .navLink {
+    color: inherit;
+    padding-bottom: 0.2em;
+    font-size: .8rem;
+    letter-spacing: 3px;
+    opacity: .7;
+
+    &:hover {
+      color: inherit;//map-get($theme-colors, "info");
+      text-decoration: inherit;
+      opacity: 1;
+    }
+
+    &.active {
+      border-bottom: 2px solid;
+      font-weight: bold;
+      opacity: 1;
+    }
+  }
+}

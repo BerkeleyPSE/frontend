@@ -74,10 +74,10 @@ const ListBlock = props => {
   }
 
   return (
-    <Block theme={theme}>
+    <Block theme={theme} className="listBlock">
       {
         title && 
-        <div className="col-12 col-md-10 pb-5" style={{borderStyle: "solid", borderWidth: "0 0 1px 0"}}>
+        <div className="col-12 col-md-10 pb-5 text-left" style={{borderStyle: "solid", borderWidth: "0 0 1px 0"}}>
           <h2>{ title }</h2>
         </div>
       }
