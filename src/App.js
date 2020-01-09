@@ -5,10 +5,12 @@ import {
   Switch,
   Route,
   useRouteMatch,
-  useParams
+  useParams,
+  Redirect
 } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { Home, ApplyInfo, About, Brothers, Careers } from './Pages'
+import { validYears } from './Careers.js';
 
 class App extends React.Component {
   render() {
@@ -35,7 +37,7 @@ class App extends React.Component {
               <CareersYear />
             </Route>
             <Route path="/careers">
-              <Careers />
+              <Redirect to={`/careers/${validYears[0]}`} />
             </Route>
             <Route path="/apply-info">
               <ApplyInfo />
@@ -43,9 +45,10 @@ class App extends React.Component {
             <Route path="/apply-app">
               <Home />
             </Route>
-            <Route path="/">
+            <Route exact path="/">
               <Home />
             </Route>
+            <Redirect to="/" />
           </Switch>
         </Router>
       </div>
@@ -70,20 +73,6 @@ function BrothersSwitch() {
 function BrotherProfile() {
   let { brotherId } = useParams();
   return <Home brotherId={ brotherId } />
-}
-
-function CareersSwitch() {
-  let match = useRouteMatch();
-  return (
-    <Switch>
-      <Route path={`${match.path}/:year`}>
-        <CareersYear />
-      </Route>
-      <Route path={match.path}>
-        <Careers />
-      </Route>
-    </Switch>
-  );
 }
 
 function CareersYear() {

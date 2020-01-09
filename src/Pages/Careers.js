@@ -2,11 +2,7 @@ import React from 'react';
 import { Helmet } from "react-helmet";
 import '../custom.scss';
 import { Header, CallToAction, ListBlock, PageTemplate, Letter, ContactBlock, InfoBlock, Table, SubNavBar } from '../Components';
-
-
-import getCareers from '../Careers.js';
-
-const validYears = [2019, 2018, 2017, 2016, 2015];
+import { getCareers, validYears } from '../Careers.js';
 
 const parseYear = year => year && validYears.includes(parseInt(year)) ? 
   parseInt(year) : 
@@ -28,13 +24,13 @@ const processData = data => {
   return [labels, Object.keys(map), map];
 };
 
-class Home extends React.Component {
+class Careers extends React.Component {
   constructor(props) {
     super(props);
 
     const year = parseYear(props.year);
     this.state = {
-      year: year,
+      year: "",
       fullTimeLabels: [],
       fullTimeIds: [],
       fullTimeData: [],
@@ -43,33 +39,26 @@ class Home extends React.Component {
       internshipData: []
     }
     this.genValidYearData = this.genValidYearData.bind(this);
-    this.getFullTimeData = this.getFullTimeData.bind(this);
-    this.getInternshipData = this.getInternshipData.bind(this);
-
-    getCareers("FullTime", year, this.getFullTimeData);
-    getCareers("Internships", year, this.getInternshipData);
-    console.log("constructor triggeres");
+    this.updateData = this.updateData.bind(this);
   }
 
-  getFullTimeData(rawData) {
-    const [ lables, ids, data ] = processData(rawData);
-    this.setState({
-      fullTimeLabels: lables,
-      fullTimeIds: ids,
-      fullTimeData: data,
-    });
+  updateData() {
+    getCareers("FullTime", this.props.year, rawDataFT => {
+      const [ lablesFT, idsFT, dataFT ] = processData(rawDataFT);
+      getCareers("Internships", this.props.year, rawDataI => {
+        const [ lablesI, idsI, dataI ] = processData(rawDataI);
+          this.setState({
+            year: this.props.year,
+            fullTimeLabels: lablesFT,
+            fullTimeIds: idsFT,
+            fullTimeData: dataFT,
+            internshipLabels: lablesI,
+            internshipIds: idsI,
+            internshipData: dataI,
+          });
+      })
+    })
   }
-
-  getInternshipData(rawData) {
-    const [ lables, ids, data ] = processData(rawData);
-    this.setState({
-      internshipLabels: lables,
-      internshipIds: ids,
-      internshipData: data,
-    });
-  }
-
-  
 
   genValidYearData(validYears) {
     var data = {};
@@ -83,12 +72,8 @@ class Home extends React.Component {
   render() {
     console.log("render triggeres");
     const year = parseYear(this.props.year);
-    if (year != this.state.year && false) {
-      this.setState(
-        {year: year},
-        () => getCareers("FullTime", year, this.getFullTimeData),
-        () => getCareers("Internships", year, this.getInternshipData)
-      );
+    if (year != this.state.year) {
+      this.updateData();
     }
 
     return (
@@ -130,4 +115,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default Careers;
