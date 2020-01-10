@@ -5,6 +5,10 @@ import Block from '../Block.js';
 import ContactBlock from '../ContactBlock.js';
 
 const socialData = {
+  email: {
+    class: "fa fa-envelope",
+    url: "mailto:"
+  },
   facebook: {
     class: "fa fa-facebook",
     url: "https://www.facebook.com/"

@@ -1,9 +1,57 @@
 import React from 'react';
 import { Helmet } from "react-helmet";
 import '../custom.scss';
-import { Header, CallToAction, ListBlock, PageTemplate, Letter, ContactBlock } from '../Components';
+import { Header, CallToAction, ListBlock, PageTemplate, Letter, ContactBlock, Block } from '../Components';
 
 
+const careerUrl = company => `https://res.cloudinary.com/berkeleypse-tech/image/upload/f_auto,fl_force_strip.progressive,q_auto:best/companyLogos/${company}.png`;
+
+const careerCompanies = [
+  {
+    title: "Accenture",
+    key: "accenture",
+  },
+  {
+    title: "Bain & Company",
+    key: "bain",
+  },
+  {
+    title: "Barclays",
+    key: "barclays",
+  },
+  {
+    title: "Deloitte",
+    key: "deloitte",
+  },
+  {
+    title: "EY",
+    key: "ey",
+  },
+  {
+    title: "IBM",
+    key: "ibm",
+  },
+  {
+    title: "KPMG",
+    key: "kpmg",
+  },
+  {
+    title: "P&G",
+    key: "pg",
+  },
+  {
+    title: "PwC",
+    key: "pwc",
+  },
+  {
+    title: "Twitter",
+    key: "twitter",
+  },
+  {
+    title: "Wells Fargo",
+    key: "wellsfargo",
+  },
+];
 
 export default function Home() {
   return (
@@ -56,11 +104,18 @@ export default function Home() {
         height="525px"
         />
 
-      <CallToAction 
+      <Block 
         theme="secondary"
         >
-        <ContactBlock />
-      </CallToAction>
+        <div className="d-flex flex-wrap justify-content-around align-items-center mx-auto" style={{maxWidth: "1020px"}}>
+          { careerCompanies.map(info => <img 
+              src={careerUrl(info.key)} 
+              title={info.title}
+              className="m-4"
+              style={{maxHeight: "75px", maxWidth: "150px"}}
+              />) }
+        </div>
+      </Block>
 
     </PageTemplate>
   );

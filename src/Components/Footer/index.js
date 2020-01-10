@@ -10,21 +10,21 @@ const Footer = props => {
   const { title, social, theme="secondary"  } = props;
 
   return (
-    <Block theme={theme} className="footer">
-      <div className="col-12 mb-4">
+    <Block theme={theme} className="footer" small>
+      <div className="col-12 my-4">
         { 
           social && social.ids &&
             social.ids.map(platform => <SocialIcon
               dest={ social.data[platform] }
               platform={ platform }
-              blockClass="mx-4"
+              blockClass="mx-3"
               />
             )
         }
       </div>
       <div className="col-12">
         <p>
-          © 2019 — Pi Sigma Epsilon | UC Berkeley Zeta Chi Chapter
+          © {(new Date()).getFullYear()} — Pi Sigma Epsilon | UC Berkeley Zeta Chi Chapter
         </p>
       </div>
     </Block>

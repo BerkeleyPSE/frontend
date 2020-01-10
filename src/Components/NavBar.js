@@ -8,7 +8,7 @@ import Block from './Block.js';
 
 
 const dataTemp = {
-  dataIDs: ["home", "about", "brothers", "careers", "apply", "projects", "contact", "login"],
+  dataIDs: ["home", "about", "brothers", "careers", "rush", "app", "projects", "contact",/* "login"*/],
   data: {
     home: {
       title: "HOME",
@@ -26,9 +26,13 @@ const dataTemp = {
       title: "CAREERS",
       dest: "/careers"
     },
-    apply: {
-      title: "APPLY",
-      dest: "/apply"
+    rush: {
+      title: "RUSH",
+      dest: "/apply-info"
+    },
+    app: {
+      title: "APP",
+      dest: "/apply-app"
     },
     projects: {
       title: "PROJECTS",
@@ -39,10 +43,10 @@ const dataTemp = {
       title: "CONTACT",
       dest: "/contact"
     },
-    login: {
-      title: "LOGIN",
-      dest: "/login"
-    },
+    // login: {
+    //   title: "LOGIN",
+    //   dest: "/login"
+    // },
   }
 }
 
@@ -64,13 +68,13 @@ const NavBar = props => {
 
   return (
     <Block className="navBar" theme={theme} small >
-      <div className="col-12 col-md-3 text-center text-md-left">
+      <div className="col-12 col-lg-3 text-center text-lg-left">
         <h1 style={{fontSize: "inherit"}}>
           <Link to="/" className={`logo ${theme}`}>{title}</Link>
         </h1>
       </div>
-      <div className="col-12 col-md-9">
-        <div className="d-flex flex-row justify-content-end">
+      <div className="col-12 col-lg-9">
+        <div className="d-flex flex-row flex-wrap justify-content-center justify-content-lg-end">
           {
             data && data.dataIDs && 
               data.dataIDs.map(id => data.data[id].external ?

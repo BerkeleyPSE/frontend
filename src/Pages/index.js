@@ -4,6 +4,7 @@ import About from './About.js';
 import Brothers from './Brothers.js';
 import Careers from './Careers.js';
 import BrothersProfile from './BrothersProfile.js';
+import Contact from './Contact.js';
 
 
 export { 
@@ -12,5 +13,6 @@ export {
   About,
   Brothers,
   Careers,
-  BrothersProfile
+  BrothersProfile,
+  Contact
 };

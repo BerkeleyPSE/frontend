@@ -9,7 +9,7 @@ import {
   Redirect
 } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { Home, ApplyInfo, About, Brothers, Careers, BrothersProfile } from './Pages'
+import { Home, ApplyInfo, About, Brothers, Careers, BrothersProfile, Contact } from './Pages'
 import { validYears } from './Careers.js';
 
 class App extends React.Component {
@@ -48,6 +48,9 @@ class App extends React.Component {
             </Route>
             <Route path="/apply-app">
               <Home />
+            </Route>
+            <Route path="/contact">
+              <Contact />
             </Route>
             <Route exact path="/">
               <Home />
