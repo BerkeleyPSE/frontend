@@ -42,7 +42,6 @@ class MemberIcon extends React.Component {
   render() {
     return (
       <Link 
-        key={this.props.brother.key} 
         className={`row mx-0 mb-3 profile`}
         to={`/brothers/${this.props.brother.key}`}
         onMouseEnter={this.hover}

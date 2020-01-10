@@ -9,7 +9,7 @@ import {
   Redirect
 } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { Home, ApplyInfo, About, Brothers, Careers } from './Pages'
+import { Home, ApplyInfo, About, Brothers, Careers, BrothersProfile } from './Pages'
 import { validYears } from './Careers.js';
 
 class App extends React.Component {
@@ -20,6 +20,7 @@ class App extends React.Component {
           <title>Pi Sigma Eplison - UC Berkeley’s Marketing & Business Fraternity</title>
           <meta name="description" content="Pi Sigma Eplison - UC Berkeley’s Marketing & Business Fraternity" />
           <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Raleway&display=swap" rel="stylesheet"/>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
           <meta charSet="utf-8" />
           <link rel="icon" href="favicon.ico" />
@@ -30,8 +31,11 @@ class App extends React.Component {
             <Route path="/about">
               <About />
             </Route>
+            <Route path="/brothers/:brotherKey">
+              <BrotherId/>
+            </Route>
             <Route path="/brothers">
-              <BrothersSwitch/>
+              <Brothers/>
             </Route>
             <Route path="/careers/:year">
               <CareersYear />
@@ -56,23 +60,9 @@ class App extends React.Component {
   }
 }
 
-function BrothersSwitch() {
-  let match = useRouteMatch();
-  return (
-    <Switch>
-      <Route path={`${match.path}/:brotherId`}>
-        <Brothers />
-      </Route>
-      <Route path={match.path}>
-        <Brothers/>
-      </Route>
-    </Switch>
-  );
-}
-
-function BrotherProfile() {
-  let { brotherId } = useParams();
-  return <Home brotherId={ brotherId } />
+function BrotherId() {
+  let { brotherKey } = useParams();
+  return <BrothersProfile brotherKey={ brotherKey } />
 }
 
 function CareersYear() {

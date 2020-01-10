@@ -12,6 +12,9 @@ import InfoBlock from './InfoBlock';
 import TeamBlock from './TeamBlock';
 import Table from './Table';
 import SubNavBar from './SubNavBar';
+import LoadingIcon from './LoadingIcon';
+import TeamMemberBlock from './TeamMemberBlock';
+import SocialIcon from './SocialIcon';
 
 
 export {
@@ -28,5 +31,8 @@ export {
   InfoBlock,
   TeamBlock,
   Table,
-  SubNavBar
+  SubNavBar,
+  LoadingIcon,
+  TeamMemberBlock,
+  SocialIcon
 };

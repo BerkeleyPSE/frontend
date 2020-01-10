@@ -11,7 +11,16 @@ const sortLastName = (s1, s2) => {
   return l1 - l2;
 };
 
-class Home extends React.Component {
+const splitActives = actives => {
+  const testExec = bool => obj => !!obj.isExecutive === bool;
+  console.log(actives.filter(obj => console.log(obj.isExecutive, !!obj.isExecutive)));
+  return [
+    actives.filter(testExec(true)), 
+    actives.filter(testExec(false))
+  ];
+}
+
+class Brothers extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,7 +38,6 @@ class Home extends React.Component {
       const rsp = await axios.get("http://api.berkeleypse.org/brothers/all");
       const rv = rsp.data.data;
       rv.sort(sortLastName);
-      console.log(rv);
       this.setState({
         activeData: rv
       });
@@ -44,7 +52,6 @@ class Home extends React.Component {
       const rsp = await axios.get("http://api.berkeleypse.org/brothers/executives");
       const rv = rsp.data.data;
       rv.sort(sortLastName);
-      console.log(rv);
       this.setState({
         eboardData: rv
       });
@@ -55,6 +62,12 @@ class Home extends React.Component {
   }
 
   render() {
+    const execKeys = this.state.eboardData.map(obj => obj.key);
+    const nonExecs = this.state.activeData.filter(obj => 
+      !(execKeys.includes(obj.key))
+    );
+    console.log(execKeys);
+    console.log(nonExecs);
     return (
       <PageTemplate
         theme="primary"
@@ -75,7 +88,7 @@ class Home extends React.Component {
 
         <TeamBlock 
           title="Active Brothers"
-          data={ this.state.activeData }
+          data={ nonExecs }
           />
 
       </PageTemplate>
@@ -83,4 +96,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default Brothers;

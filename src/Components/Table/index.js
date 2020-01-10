@@ -3,6 +3,7 @@ import '../../custom.scss';
 import './styles.scss';
 import Block from '../Block.js';
 import Button from '../Button';
+import LoadingIcon from '../LoadingIcon'
 
 const genRow = (attriutes, i) => (
   <div key={ attriutes[0] } className={`col-12 py-2 entry ${i==0 && 'first'}`}>
@@ -50,6 +51,7 @@ const Table = props => {
       <div className="col-12 col-lg-10">
         <div className="row">
           { titleComponent }
+          { !(ids && ids.length > 0) && <LoadingIcon customClass="col p-3" /> }
           <div className="col-12 mt-4 labels">
             <div className="row text-left">
               { 

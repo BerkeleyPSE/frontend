@@ -3,6 +3,7 @@ import ApplyInfo from './ApplyInfo.js';
 import About from './About.js';
 import Brothers from './Brothers.js';
 import Careers from './Careers.js';
+import BrothersProfile from './BrothersProfile.js';
 
 
 export { 
@@ -10,5 +11,6 @@ export {
   ApplyInfo,
   About,
   Brothers,
-  Careers
+  Careers,
+  BrothersProfile
 };

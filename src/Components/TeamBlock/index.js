@@ -4,16 +4,16 @@ import './styles.scss';
 import Block from '../Block.js';
 import Button from '../Button';
 import MemberIcon from './MemberIcon.js'
+import LoadingIcon from '../LoadingIcon'
 
 
 
 const TeamBlock = props => {
 
-  let { title, data, theme="seconrdary" } = props;
+  let { title, data, blockClass, theme="seconrdary" } = props;
   const spacer = <div className="d-none d-md-block col-1"/>
   const dummy = i => <div key={`TeamBlockDummy-${i}`} className="profile dummy"/>
-  console.log(data)
-  data = Array.from(data);
+  // data = Array.from(data);
 
   var filler;
   if (data) {
@@ -33,7 +33,7 @@ const TeamBlock = props => {
   }
 
   return (
-    <Block theme={theme} className="teamBlock">
+    <Block theme={theme} className={`teamBlock ${blockClass}`}>
       { spacer }
       <div className="col-12 col-md-10">
         {
@@ -43,11 +43,15 @@ const TeamBlock = props => {
           </div>
         }
         {
-          data &&
+          data && data.length ?
             <div className="d-flex flex-wrap justify-content-around justify-content-md-between">
-              { data.map((brother, i) => <MemberIcon i={i} brother={brother}/>) }
+              { data.map((brother, i) => <MemberIcon 
+                  key={`${title.split(' ').join('')}-${brother.key}`} 
+                  brother={brother}
+                  />) }
               { filler }
-            </div>
+            </div> :
+            <LoadingIcon customClass="p-3" />
         }
       </div>
       { spacer }

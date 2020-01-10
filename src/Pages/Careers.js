@@ -99,7 +99,7 @@ class Careers extends React.Component {
           labels={this.state.fullTimeLabels}
           ids={this.state.fullTimeIds}
           data={this.state.fullTimeData}
-          blockClass="mt-n5"
+          blockClass="pt-0"
           />
 
         <Table 
