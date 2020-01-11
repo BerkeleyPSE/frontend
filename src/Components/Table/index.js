@@ -45,17 +45,19 @@ const Table = props => {
         />
     </div>;
 
+  const dataPresent = (ids && ids.length > 0);
+
   return (
     <Block theme={theme} className={`tableBlock ${blockClass}`}>
       { spacer }
       <div className="col-12 col-lg-10">
         <div className="row">
           { titleComponent }
-          { !(ids && ids.length > 0) && <LoadingIcon customClass="col p-3" /> }
+          { !dataPresent && <LoadingIcon customClass="col p-3" /> }
           <div className="col-12 mt-4 labels">
             <div className="row text-left">
               { 
-                labels.map(val =>
+                dataPresent && labels.map(val =>
                   <div key={ val } className="col">
                     <h4 className="ml-2 pb-2">{ val.toUpperCase() }</h4>
                   </div>

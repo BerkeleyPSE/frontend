@@ -10,7 +10,7 @@ import {
 } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { Home, ApplyInfo, About, Brothers, Careers, BrothersProfile, Contact } from './Pages'
-import { validYears } from './Careers.js';
+import { CareersData } from './Data';
 
 class App extends React.Component {
   render() {
@@ -41,7 +41,7 @@ class App extends React.Component {
               <CareersYear />
             </Route>
             <Route path="/careers">
-              <Redirect to={`/careers/${validYears[0]}`} />
+              <Redirect to={`/careers/${CareersData.validYears[0]}`} />
             </Route>
             <Route path="/apply-info">
               <ApplyInfo />

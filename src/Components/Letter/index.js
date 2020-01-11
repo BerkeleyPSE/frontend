@@ -4,11 +4,12 @@ import '../../custom.scss';
 import Block from '../Block.js';
 import ContactBlock from '../ContactBlock.js';
 import Button from '../Button';
+import LoadingIcon from '../LoadingIcon';
 
 
 const Letter = props => {
 
-  const { greet, body, signiture, title, img, children, theme="secondary"} = props;
+  const { greet, body, signiture, position, img, children, theme="secondary"} = props;
   const spacer = <div className="d-none d-lg-block col-1"/>;
 
   return (
@@ -18,16 +19,17 @@ const Letter = props => {
         <img src={img} />
       </div>
       <div className={"col-12 col-lg-7 text-left "}>
+        { !signiture && <LoadingIcon customClass="text-center mt-5"/> }
         <p>{ greet }</p>
         { 
           body && body.map((paragraph, i) => (
-            <p key={`${title}-${i}`}>
+            <p key={`${position.split(' ').join('')}-${i}`}>
               { paragraph }
             </p>
           )) 
         }
         <p className="text-right" style={{marginBottom: "0px"}}>{ signiture }</p>
-        <p className="text-right">{ title }</p>
+        <p className="text-right">{ position }</p>
       </div>
       { spacer }
     </Block>

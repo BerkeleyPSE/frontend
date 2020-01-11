@@ -15,6 +15,7 @@ const Footer = props => {
         { 
           social && social.ids &&
             social.ids.map(platform => <SocialIcon
+              key={"footer" + platform}
               dest={ social.data[platform] }
               platform={ platform }
               blockClass="mx-3"

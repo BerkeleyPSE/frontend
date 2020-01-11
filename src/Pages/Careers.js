@@ -2,11 +2,11 @@ import React from 'react';
 import { Helmet } from "react-helmet";
 import '../custom.scss';
 import { Header, CallToAction, ListBlock, PageTemplate, Letter, ContactBlock, InfoBlock, Table, SubNavBar } from '../Components';
-import { getCareers, validYears } from '../Careers.js';
+import { CareersData } from '../Data';
 
-const parseYear = year => year && validYears.includes(parseInt(year)) ? 
+const parseYear = year => year && CareersData.validYears.includes(parseInt(year)) ? 
   parseInt(year) : 
-  validYears[0];
+  CareersData.validYears[0];
 
 const processData = data => {
   var rv = []
@@ -43,9 +43,9 @@ class Careers extends React.Component {
   }
 
   updateData() {
-    getCareers("FullTime", this.props.year, rawDataFT => {
+    CareersData.getCareers("FullTime", this.props.year, rawDataFT => {
       const [ lablesFT, idsFT, dataFT ] = processData(rawDataFT);
-      getCareers("Internships", this.props.year, rawDataI => {
+      CareersData.getCareers("Internships", this.props.year, rawDataI => {
         const [ lablesI, idsI, dataI ] = processData(rawDataI);
           this.setState({
             year: this.props.year,
@@ -70,7 +70,6 @@ class Careers extends React.Component {
   }
 
   render() {
-    console.log("render triggeres");
     const year = parseYear(this.props.year);
     if (year != this.state.year) {
       this.updateData();
@@ -92,20 +91,24 @@ class Careers extends React.Component {
           />
 
         <SubNavBar
-          data={ this.genValidYearData(validYears) }
+          data={ this.genValidYearData(CareersData.validYears) }
           />
         <Table 
           title="Full-Time"
           labels={this.state.fullTimeLabels}
-          ids={this.state.fullTimeIds}
-          data={this.state.fullTimeData}
+          ids={ year == this.state.year ? 
+            this.state.fullTimeIds :
+            [] }
+          data={ this.state.fullTimeData }
           blockClass="pt-0"
           />
 
         <Table 
           title="Internships"
           labels={this.state.internshipLabels}
-          ids={this.state.internshipIds}
+          ids={ year == this.state.year ? 
+            this.state.internshipIds :
+            [] }
           data={this.state.internshipData}
           blockClass="mt-n5"
           />
