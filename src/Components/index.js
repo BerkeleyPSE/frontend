@@ -15,6 +15,7 @@ import SubNavBar from './SubNavBar';
 import LoadingIcon from './LoadingIcon';
 import TeamMemberBlock from './TeamMemberBlock';
 import SocialIcon from './SocialIcon';
+import FAQ from './FAQ';
 
 
 export {
@@ -34,5 +35,6 @@ export {
   SubNavBar,
   LoadingIcon,
   TeamMemberBlock,
-  SocialIcon
+  SocialIcon,
+  FAQ
 };
