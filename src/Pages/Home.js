@@ -2,8 +2,9 @@ import React from 'react';
 import { Helmet } from "react-helmet";
 import '../custom.scss';
 import { Header, CallToAction, ListBlock, PageTemplate, Letter, ContactBlock, Block } from '../Components';
-import { LetterData } from '../Data';
+import { LetterData, AppData } from '../Data';
 
+const axios = require('axios');
 
 const careerUrl = company => `https://res.cloudinary.com/berkeleypse-tech/image/upload/f_auto,fl_force_strip.progressive,q_auto:best/companyLogos/${company}.png`;
 
@@ -58,13 +59,36 @@ const careerCompanies = [
     constructor(props) {
       super(props);
       this.state = {
+        presidentPhoto: "",
         greet: "",
         body: [],
         signature: "",
         position: [],
       }
+      this.getPresidentPhoto = this.getPresidentPhoto.bind(this);
       this.getHomeLetterData = this.getHomeLetterData.bind(this);
+      this.getPresidentPhoto();
       this.getHomeLetterData();
+    }
+
+    async getPresidentPhoto() {
+      try {
+        const rsp = await axios.get("http://api.berkeleypse.org/brothers/executives");
+        const rv = rsp.data.data;
+
+        for (var i = rv.length - 1; i >= 0; i--) {
+          const exec = rv[i];
+          if (exec["position"] == "President") {
+            this.setState({
+              presidentPhoto: `https://res.cloudinary.com/berkeleypse-tech/image/upload/f_auto,fl_force_strip.progressive,q_auto:best/brothers/${rv[i].key}.jpg`
+            });
+            return;
+          }
+        }
+      } catch (err) {
+        console.error(err);
+        return [];
+      }
     }
 
     getHomeLetterData() {
@@ -87,6 +111,9 @@ const careerCompanies = [
     }
 
     render() {
+      const currCycle = AppData.getRecruitmentDates()[0];
+      const season = currCycle[0];
+      const year = currCycle[1];
       return (
         <PageTemplate
           theme="primary"
@@ -97,10 +124,11 @@ const careerCompanies = [
           <Header 
             title="Pi Sigma Eplison" 
             body="UC Berkeley’s Marketing & Business Fraternity"
-            buttonText="Spring Rush 2020"
+            buttonText={`${season} Recruitment ${year}`}
             buttonDest="/apply-info"
             theme="primary"
-            height="525px"
+            height="675px"
+            img="https://res.cloudinary.com/berkeleypse-tech/image/upload/f_auto,fl_force_strip.progressive,q_auto:best/website/home/header1.png"
             />
 
           <Letter
@@ -108,7 +136,7 @@ const careerCompanies = [
             body={ this.state.body }
             signiture={ this.state.signature }
             position={ this.state.position }
-            img={ "https://res.cloudinary.com/berkeleypse-tech/image/upload/f_auto,fl_force_strip.progressive,q_auto:best/brothers/clevian_hsia1.png" }
+            img={ this.state.presidentPhoto }
             />
 
           <Header 

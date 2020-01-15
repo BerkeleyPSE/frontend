@@ -4,7 +4,7 @@ import './styles.scss';
 import {
   Link
 } from "react-router-dom";
-import Block from '../Block.js';
+import Block from '../Block';
 import Button from '../Button';
 
 // const BrotherIcon = props => (
@@ -22,7 +22,7 @@ import Button from '../Button';
 class MemberIcon extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { src: `https://res.cloudinary.com/berkeleypse-tech/image/upload/f_auto,fl_force_strip.progressive,q_auto:best/brothers/${this.props.brother.key}.png` };
+    this.state = { src: `https://res.cloudinary.com/berkeleypse-tech/image/upload/f_auto,fl_force_strip.progressive,q_auto:best/brothers/${this.props.brother.key}.jpg` };
     this.hover = this.hover.bind(this);
     this.unHover = this.unHover.bind(this);
   }
@@ -35,7 +35,7 @@ class MemberIcon extends React.Component {
 
   unHover() {
     this.setState((state, props) => ({
-        src: `https://res.cloudinary.com/berkeleypse-tech/image/upload/f_auto,fl_force_strip.progressive,q_auto:best/brothers/${this.props.brother.key}.png`
+        src: `https://res.cloudinary.com/berkeleypse-tech/image/upload/f_auto,fl_force_strip.progressive,q_auto:best/brothers/${this.props.brother.key}.jpg`
       }));
   }
 

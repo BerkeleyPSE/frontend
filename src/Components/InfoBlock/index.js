@@ -1,7 +1,7 @@
 import React from 'react';
 // import './styles.scss';
 import '../../custom.scss';
-import Block from '../Block.js';
+import Block from '../Block';
 import ContactBlock from '../ContactBlock.js';
 import Button from '../Button';
 

@@ -5,6 +5,7 @@ import Brothers from './Brothers.js';
 import Careers from './Careers.js';
 import BrothersProfile from './BrothersProfile.js';
 import Contact from './Contact.js';
+import ApplyApp from './ApplyApp.js';
 
 
 export { 
@@ -14,5 +15,6 @@ export {
   Brothers,
   Careers,
   BrothersProfile,
-  Contact
+  Contact,
+  ApplyApp
 };

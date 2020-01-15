@@ -1,11 +1,11 @@
-import Block from './Block.js';
+import Block from './Block';
 import Button from './Button';
 import CallToAction from './CallToAction';
 import ContactBlock from './ContactBlock.js';
 import Footer from './Footer';
-import Header from './Header.js';
+import Header from './Header';
 import ListBlock from './ListBlock';
-import NavBar from './NavBar.js';
+import NavBar from './NavBar';
 import PageTemplate from './PageTemplate.js';
 import Letter from './Letter';
 import InfoBlock from './InfoBlock';
@@ -17,6 +17,7 @@ import TeamMemberBlock from './TeamMemberBlock';
 import SocialIcon from './SocialIcon';
 import FAQ from './FAQ';
 import PreReg from './PreReg';
+import AppBlock from './AppBlock';
 
 
 export {
@@ -38,5 +39,6 @@ export {
   TeamMemberBlock,
   SocialIcon,
   FAQ,
-  PreReg
+  PreReg,
+  AppBlock
 };

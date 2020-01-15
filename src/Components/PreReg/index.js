@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../custom.scss';
 import './styles.scss';
-import Block from '../Block.js';
+import Block from '../Block';
 import Button from '../Button';
 
 
@@ -13,7 +13,7 @@ const PreReg = props => {
   return (
     <Block theme={theme} className={`preReg ${blockClass}`}>
       <div className="col-12 d-flex justify-content-center innerContent">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScTHNzaeMeA6jno1Q7g4l31tUP5A65TIfeRiIYVHd9yclml0w/viewform?embedded=true" width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScTHNzaeMeA6jno1Q7g4l31tUP5A65TIfeRiIYVHd9yclml0w/viewform?embedded=true" width="640" height="800" frameBorder="0" marginHeight="0" marginWidth="0">Loading…</iframe>
         {/*<form 
           action="https://docs.google.com/forms/u/2/d/e/1FAIpQLSdIwEISfTusew2kBzTj0Qgf3psKcO94Rglzd-XCMVlrhk0gow/formResponse"
           method="POST"

@@ -1,7 +1,8 @@
 import React from 'react';
 import '../custom.scss';
 import Footer from './Footer';
-import NavBar from './NavBar.js';
+import NavBar from './NavBar';
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 
 const socialData = {
@@ -15,19 +16,22 @@ const socialData = {
 
 export default function PageTemplate(props) {
 
-  const { navBarData={title: "Pi Sigma Eplison"}, footerData, children, theme } = props;
+  const { navBarData={title: "Pi Sigma Eplison", subtitle: "Zeta Chi Chapter"}, footerData, children, theme } = props;
 
   return (
-    <div className="App">
-      <NavBar 
-        title={navBarData.title} 
-        theme={theme}
-        />
-      {children}
-      <Footer 
-        social={ socialData }
-        theme="primary"
-        />
-    </div>
+    <ParallaxProvider>
+      <div className="App">
+        <NavBar 
+          title={navBarData.title} 
+          subtitle={navBarData.subtitle} 
+          theme={theme}
+          />
+          {children}
+        <Footer 
+          social={ socialData }
+          theme="primary"
+          />
+      </div>
+    </ParallaxProvider>
   );
 }

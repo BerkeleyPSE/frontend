@@ -9,4 +9,25 @@ function postAppPreReg(page, callback, data) {
   postSheetsData(sheetID, sheetName, callback, data);
 }
 
-export default { postAppPreReg };
+// bascilly splits 0-X, X-11 (zero indexed)
+const fallSeasonThreshold = 7;
+
+function getRecruitmentDates() {
+  const date = new Date();
+  const year = date.getFullYear();
+  const month = date.getMonth();
+
+  if (month < fallSeasonThreshold) {
+    return [
+      ["Spring", year], 
+      ["Fall", year] 
+    ];
+  } else {
+    return [
+      ["Fall", year], 
+      ["Spring", year + 1] 
+    ];
+  }
+}
+
+export default { postAppPreReg, getRecruitmentDates };

@@ -1,10 +1,11 @@
 import React from 'react';
-import '../custom.scss';
+import './styles.scss';
 import {
   Link,
   NavLink
 } from "react-router-dom";
-import Block from './Block.js';
+import Block from '../Block';
+import crest from './pselogo.png';
 
 
 const dataTemp = {
@@ -64,16 +65,22 @@ const makeExternalLink = (title, dest, theme) => (
 )
 
 const NavBar = props => {
-  const { title, data=dataTemp, theme} = props;
+  const { title, subtitle, data=dataTemp, theme} = props;
 
   return (
     <Block className="navBar" theme={theme} small >
-      <div className="col-12 col-lg-3 text-center text-lg-left">
-        <h1 style={{fontSize: "inherit"}}>
-          <Link to="/" className={`logo ${theme}`}>{title}</Link>
-        </h1>
+      <div className="col-12 col-lg-4 text-center text-lg-left">
+          <Link to="/" className={`logo ${theme}`}>
+            <div className="d-flex justify-content-center justify-content-lg-start align-items-center">
+              <img className="crest" src={crest}/>
+              <div className="ml-2 d-flex flex-column">
+                <h1 className="title">{title} </h1>
+                <p className="subtitle">{subtitle && subtitle.toUpperCase()}</p>
+              </div>
+            </div>
+          </Link>
       </div>
-      <div className="col-12 col-lg-9">
+      <div className="col-12 col-lg-8">
         <div className="d-flex flex-row flex-wrap justify-content-center justify-content-lg-end">
           {
             data && data.dataIDs && 

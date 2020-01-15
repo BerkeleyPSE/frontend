@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../custom.scss';
 import './styles.scss';
-import Block from '../Block.js';
+import Block from '../Block';
 import Button from '../Button';
 import MemberIcon from './MemberIcon.js'
 import LoadingIcon from '../LoadingIcon'

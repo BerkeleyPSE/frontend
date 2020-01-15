@@ -32,9 +32,9 @@ body {
   color: map-get($theme-colors, "dark");
 
   p {
-    font-size: .9rem;
+    font-size: .85rem;
     @include media-breakpoint-up(md) {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
     }
   }
 }
@@ -176,7 +176,6 @@ img {
 
 .preReg {
   .innerContent {
-    overflow: hidden;
     height: 550px;
     @include media-breakpoint-up(md) {
       height: 525px;
@@ -186,43 +185,19 @@ img {
 
 .navBar {
   .logo {
-    font-size: 1.2rem;
-    font-family: 'Cormorant Garamond', serif;
-
-    @include media-breakpoint-up(md) {
-      font-size: 2rem;
+    .title {
+      font-size: 1.2rem;
+      @include media-breakpoint-up(lg) {
+        font-size: 2rem;
+      }
     }
-
-    &:hover {
-      color: inherit;
-      text-decoration: inherit;
-    }
-  }
-
-  .navLink {
-    padding-bottom: 0.2em;
-    font-size: .8rem;
-    letter-spacing: 3px;
-
-    &:hover {
-      color: inherit;//map-get($theme-colors, "info");
-      text-decoration: inherit;
-      opacity: .7;
-    }
-
-    &.active {
-      border-bottom: 1px solid;
+    .subtitle {
+      font-size: .9rem;
+      @include media-breakpoint-up(lg) {
+        font-size: 1.1rem;
+      }
     }
   }
-}
-
-.block {
-  padding-top: 6.6vmax;
-  padding-bottom: 6.6vmax;
-
-  // >:first-child {
-  //   padding-top: 17px;
-  // }
 }
 
 .primary {

@@ -1,0 +1,36 @@
+.navBar {
+  .logo {
+    user-select: none;
+    .title {
+      margin-bottom: 0px;
+    }
+    .subtitle {
+      margin-bottom: 0px;
+      letter-spacing: 3px;
+    }
+    .crest {
+      max-height: 50px;
+      width: auto;
+    }
+    &:hover {
+      color: inherit;
+      text-decoration: inherit;
+    }
+  }
+
+  .navLink {
+    padding-bottom: 0.2em;
+    font-size: .8rem;
+    letter-spacing: 3px;
+
+    &:hover {
+      color: inherit;//map-get($theme-colors, "info");
+      text-decoration: inherit;
+      opacity: .7;
+    }
+
+    &.active {
+      border-bottom: 1px solid;
+    }
+  }
+}

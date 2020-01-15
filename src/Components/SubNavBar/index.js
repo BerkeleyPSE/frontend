@@ -5,7 +5,7 @@ import {
   Link,
   NavLink
 } from "react-router-dom";
-import Block from '../Block.js';
+import Block from '../Block';
 
 const makeLink = (title, dest, theme) => (
   <div key={title} className="p-2">

@@ -2,10 +2,14 @@ import React from 'react';
 import { Helmet } from "react-helmet";
 import '../custom.scss';
 import { Header, CallToAction, ListBlock, PageTemplate, Letter, ContactBlock, InfoBlock } from '../Components';
-
+import { AppData } from '../Data';
 
 
 export default function Home() {
+  const currCycle = AppData.getRecruitmentDates()[0];
+  const season = currCycle[0];
+  const year = currCycle[1];
+
   return (
     <PageTemplate
       theme="primary"
@@ -25,7 +29,7 @@ export default function Home() {
         body={[
           "The Zeta Chi chapter of Pi Sigma Epsilon was founded in March 2013. Then-campus junior Sabrina Ruiz observed a lack of marketing and retail management courses and organizations on Berkeley’s campus despite students and recruiters interested in the fields. She believed PSE could be the solution. To make this idea into a reality, Ruiz recruited Kelly Chao, Cynthia Huang, Lydia Kim, Peggy Lin, and Hiu Ngan to compose Zeta Chi’s founding Alpha class. These six officially chartered the chapter in August 2013.",
           "Our chapter endeavors to epitomize the goals of the fraternity in each and every member through various events focused around developing professionalism, confidence, leadership, and networking abilities. Alongside placing the utmost value on its diversity of people, interests, and majors, the Zeta Chi Chapter provides its brothers with opportunities to hone into their marketing and business skills. Thus, in 2016, we established ZC Consulting, a marketing and strategy consulting group, to further support our brothers' experiential learning and professional opportunities.",
-          "Now in its sixth year, the Zeta Chi Chapter consist of over 45 members, representing a variety of majors and career paths. In Fall 2019, we will be recruiting for the prospective Omnicron class in the Hsia administration.",
+          `Now in its ${year - 2013}th year, the Zeta Chi Chapter consist of over 45 members, representing a variety of majors and career paths. In ${season} ${year}, we are excited to be recruiting for the next generation of our family.`,
           "We are proudly recognized and sponsored by the Walter A. Haas School of Business, ASUC, and the UC Berkeley Career Center."
         ]}
         />

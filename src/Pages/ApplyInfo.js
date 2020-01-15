@@ -4,6 +4,8 @@ import '../custom.scss';
 import { Header, CallToAction, FAQ, PageTemplate, Letter, ContactBlock, PreReg } from '../Components';
 import { LetterData, AppData } from '../Data';
 
+const axios = require('axios');
+
 const faqData = [
   ["What makes PSE different from other organizations?", "PSE differentiates itself from other business fraternities and organizations both in its learning philosophy and specialization. We prepare our brothers with the knowledge and skills necessary to succeed in today's business world, but we also go further to provide opportunities to utilize and hone these skills within projects across various industries. PSE hosts networking opportunities and corporate infosessions with professionals and alumni, and puts its members in positions to become their best possible professional selves. But, PSE provides far more than professional development - as a fraternity, we are an intimate, close-knit community where brothers can build strong personal relationships, and lasting friendships."],
   ["Are all recruitment events mandatory?", "You must attend at least one of the three recruitment events (Meet the Chapter, Social Mixer, Case Workshop) to be considered for an interview. The greater the number of events you attend, the more chances you have to meet the brothers and vice versa, and the better we will be able to learn about you."],
@@ -22,13 +24,36 @@ const faqData = [
     constructor(props) {
       super(props);
       this.state = {
+        hrPhoto: "",
         greet: "",
         body: [],
         signature: "",
         position: [],
       }
+      this.getHRPhoto = this.getHRPhoto.bind(this);
       this.getRushLetterData = this.getRushLetterData.bind(this);
+      this.getHRPhoto();
       this.getRushLetterData();
+    }
+
+    async getHRPhoto() {
+      try {
+        const rsp = await axios.get("http://api.berkeleypse.org/brothers/executives");
+        const rv = rsp.data.data;
+
+        for (var i = rv.length - 1; i >= 0; i--) {
+          const exec = rv[i];
+          if (exec["position"] == "Vice President of Human Resources") {
+            this.setState({
+              hrPhoto: `https://res.cloudinary.com/berkeleypse-tech/image/upload/f_auto,fl_force_strip.progressive,q_auto:best/brothers/${rv[i].key}.jpg`
+            });
+            return;
+          }
+        }
+      } catch (err) {
+        console.error(err);
+        return [];
+      }
     }
 
     getRushLetterData() {
@@ -51,6 +76,9 @@ const faqData = [
     }
 
     render() {
+    const currCycle = AppData.getRecruitmentDates()[0];
+    const season = currCycle[0];
+    const year = currCycle[1];
       
       // AppData.postAppPreReg("Sheet1", status => console.log(status), [["test", "ting"]]);
 
@@ -67,9 +95,9 @@ const faqData = [
             <title>Pi Sigma Eplison - Application Info</title>
           </Helmet>
           <Header 
-            title="Spring Recruitment 2019" 
-            body="January 25th - February 8th"
-            buttonText="Spring 2020 Application"
+            title={`${season} Recruitment ${year}`} 
+            body={"January 25th - February 8th"  /*MANUALL CHANGE THIS*/}
+            buttonText="Go to Application"
             buttonDest="/apply-app"
             theme="primary"
             height="475px"
@@ -80,7 +108,7 @@ const faqData = [
             body={ this.state.body }
             signiture={ this.state.signature }
             position={ this.state.position }
-            img={ "https://res.cloudinary.com/berkeleypse-tech/image/upload/f_auto,fl_force_strip.progressive,q_auto:best/brothers/clevian_hsia1.png" }
+            img={ this.state.hrPhoto }
             />
 
           <CallToAction 
