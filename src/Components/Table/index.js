@@ -51,7 +51,7 @@ const Table = props => {
     <Block theme={theme} className={`tableBlock ${blockClass}`}>
       { spacer }
       <div className="col-12 col-lg-10">
-        <div className="row">
+        <div className="row tableBlockContents">
           { titleComponent }
           { !dataPresent && <LoadingIcon customClass="col p-3" /> }
           <div className="col-12 mt-4 labels">

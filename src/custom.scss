@@ -30,6 +30,13 @@ body {
   font-family: 'Raleway', sans-serif;
   line-height: 1.5rem;
   color: map-get($theme-colors, "dark");
+
+  p {
+    font-size: .9rem;
+    @include media-breakpoint-up(md) {
+      font-size: 1.1rem;
+    }
+  }
 }
 
 h1, h2, h3, h4, h5 {
@@ -145,6 +152,35 @@ img {
   .mail {
     color: map-get($theme-colors, "purple-med");
     font-weight: bold;
+  }
+}
+
+.faq {
+  .open {
+    .answer {
+      p {
+        max-height: 500px;
+        @include media-breakpoint-up(md) {
+          max-height: 300px;
+        }
+        @include media-breakpoint-up(lg) {
+          max-height: 250px;
+        }
+        @include media-breakpoint-up(xl) {
+          max-height: 525px;
+        }
+      }
+    }
+  }
+}
+
+.preReg {
+  .innerContent {
+    overflow: hidden;
+    height: 550px;
+    @include media-breakpoint-up(md) {
+      height: 525px;
+    }
   }
 }
 

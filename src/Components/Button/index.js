@@ -8,7 +8,8 @@ import {
 
 const Button = props => {
 
-  const {title, dest=false, onClick=()=>null, external=false} = props;
+  var {title, dest=false, onClick=()=>null, external=false} = props;
+  title = title.toUpperCase();
 
   if (external) {
     return <a 

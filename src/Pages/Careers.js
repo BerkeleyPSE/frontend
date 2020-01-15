@@ -100,7 +100,7 @@ class Careers extends React.Component {
             this.state.fullTimeIds :
             [] }
           data={ this.state.fullTimeData }
-          blockClass="pt-0"
+          blockClass="pt-2 pt-md-0"
           />
 
         <Table 

@@ -16,6 +16,7 @@ import LoadingIcon from './LoadingIcon';
 import TeamMemberBlock from './TeamMemberBlock';
 import SocialIcon from './SocialIcon';
 import FAQ from './FAQ';
+import PreReg from './PreReg';
 
 
 export {
@@ -36,5 +37,6 @@ export {
   LoadingIcon,
   TeamMemberBlock,
   SocialIcon,
-  FAQ
+  FAQ,
+  PreReg
 };

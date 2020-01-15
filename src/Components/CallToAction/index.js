@@ -29,7 +29,7 @@ const CallToAction = props => {
   const {title, button, buttonDest, buttonExternal, img, children, theme="secondary"} = props;
 
   return (
-    <Block theme={theme} className="callToAction">
+    <Block theme={theme} className="callToAction" small>
       { img && genImg(img)}
       { title && genText(title) }
       { button && genButton(button, buttonDest, buttonExternal) }

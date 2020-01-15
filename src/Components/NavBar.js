@@ -27,13 +27,13 @@ const dataTemp = {
       dest: "/careers"
     },
     rush: {
-      title: "RUSH",
+      title: "JOIN US",
       dest: "/apply-info"
     },
-    app: {
-      title: "APP",
-      dest: "/apply-app"
-    },
+    // app: {
+    //   title: "APP",
+    //   dest: "/apply-app"
+    // },
     projects: {
       title: "PROJECTS",
       dest: "https://www.zc-consulting.org/",

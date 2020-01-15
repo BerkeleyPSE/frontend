@@ -49,10 +49,10 @@ $animation-span: .3s;
         @include transform(rotate(180deg));
       }
     }
-    .answer {
-      p {
-        max-height: 500px;
-      }
-    }
+    // .answer {
+    //   p {
+    //     max-height: 500px;
+    //   }
+    // }
   }
 }

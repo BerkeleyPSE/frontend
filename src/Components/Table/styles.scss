@@ -1,4 +1,17 @@
 .tableBlock {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tableBlockContents {
+    flex: 0 0 auto;
+    min-width: 500px;
+  }
   p {
     margin-bottom: 0px;
   }
