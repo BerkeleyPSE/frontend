@@ -8,7 +8,7 @@ import Block from './Block.js';
 
 
 const dataTemp = {
-  dataIDs: ["home", "about", "brothers", "careers", "rush", "app", "projects", "contact",/* "login"*/],
+  dataIDs: ["home", "about", "brothers", "careers", "rush", /*"app"*/, "projects", "contact",/* "login"*/],
   data: {
     home: {
       title: "HOME",
@@ -30,10 +30,10 @@ const dataTemp = {
       title: "JOIN US",
       dest: "/apply-info"
     },
-    // app: {
-    //   title: "APP",
-    //   dest: "/apply-app"
-    // },
+    app: {
+      title: "APP",
+      dest: "/apply-app"
+    },
     projects: {
       title: "PROJECTS",
       dest: "https://www.zc-consulting.org/",
@@ -43,10 +43,10 @@ const dataTemp = {
       title: "CONTACT",
       dest: "/contact"
     },
-    // login: {
-    //   title: "LOGIN",
-    //   dest: "/login"
-    // },
+    login: {
+      title: "LOGIN",
+      dest: "/login"
+    },
   }
 }
 
