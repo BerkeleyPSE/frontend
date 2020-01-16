@@ -22,6 +22,7 @@ import { LetterData, AppData } from '../Data';
             title={`${season} Recruitment ${year}`} 
             theme="primary"
             height="475px"
+            img="https://res.cloudinary.com/berkeleypse-tech/image/upload/v1579173703/website/apply_app/header1.png"
             />
 
           <AppBlock

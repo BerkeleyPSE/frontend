@@ -144,6 +144,7 @@ const careerCompanies = [
             body="Here at Pi Sigma Epsilon, we are committed to three fundamental values."
             theme="primary"
             height="525px"
+            img="https://res.cloudinary.com/berkeleypse-tech/image/upload/f_auto,fl_force_strip.progressive,q_auto:best/website/home/header2.png"
             />
 
           <ListBlock 
@@ -159,6 +160,7 @@ const careerCompanies = [
             buttonDest="/careers"
             theme="primary"
             height="525px"
+            img="https://res.cloudinary.com/berkeleypse-tech/image/upload/f_auto,fl_force_strip.progressive,q_auto:best/website/home/header3.png"
             />
 
           <Block 

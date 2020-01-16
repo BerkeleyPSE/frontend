@@ -10,18 +10,18 @@ const dataValues = {
   data: {
     bros: {
       key: "Brotherhood",
-      value: "our bros love eachother so much, many of them end up dating each other!",
-      img: "https://drive.google.com/uc?export=view&id=1-sSqxZIMkYWO9kS5KJ4HIUjTpoKjYw-K"
+      value: "With over 50 brothers, the close-knit community and life-long relationships created between each individual serves as the core foundation of our fraternity. Our brothers can always rely on each other to grow together and support one another professionally, academically, and socially.",
+      img: "https://res.cloudinary.com/berkeleypse-tech/image/upload/fl_force_strip.progressive,q_auto:best/website/home/value1.png"
     },
     prof: {
       key: "Professionalism",
-      value: "Through exclusive infosessions and workshops, we provide endless opportunities for our brothers to continue to develop professionally. Brothers also have the opportunity to gain invaluable experience through real-world client work with ZC Consulting.",
-      img: "https://drive.google.com/uc?export=view&id=1-sSqxZIMkYWO9kS5KJ4HIUjTpoKjYw-K"
+      value: "Through career-oriented information sessions, workshops, and projects, our fraternity provides endless opportunities for our brothers to foster professional development and success. Our collaboration with other organizations on campus provides the ability to network with peers from different backgrounds and gain professional insights. Additionally, our brothers gain the invaluable resources of the Pi Sigma Epsilon National network to expand their career pursuits across the country.",
+      img: "https://res.cloudinary.com/berkeleypse-tech/image/upload/fl_force_strip.progressive,q_auto:best/website/home/value2.png"
     },
     cur: {
-      key: "Curiosity",
-      value: "jk we're not v curious people",
-      img: "https://drive.google.com/uc?export=view&id=1-sSqxZIMkYWO9kS5KJ4HIUjTpoKjYw-K"
+      key: "Creativity",
+      value: "Our brothers study a wide range of majors, from Business Administration to EECS to Media Studies, and pursue a multitude of career paths in consulting, marketing, and more. With this diversity in our interests and passions, our brotherhood fully fosters an environment for brothers to apply their own personal creativities and individuality to career-oriented projects.",
+      img: "https://res.cloudinary.com/berkeleypse-tech/image/upload/f_auto,fl_force_strip.progressive,q_auto:best/website/home/value3.png"
     }
   }
 }

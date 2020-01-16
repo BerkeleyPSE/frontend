@@ -80,15 +80,13 @@ const NavBar = props => {
             </div>
           </Link>
       </div>
-      <div className="col-12 col-lg-8">
-        <div className="d-flex flex-row flex-wrap justify-content-center justify-content-lg-end">
-          {
-            data && data.dataIDs && 
-              data.dataIDs.map(id => data.data[id].external ?
-                makeExternalLink(data.data[id].title, data.data[id].dest, theme) :
-                makeLink(data.data[id].title, data.data[id].dest, theme))
-          }
-        </div>
+      <div className="col-12 col-lg-8 pt-2 pt-lg-0 d-flex flex-row flex-wrap align-items-end justify-content-center justify-content-lg-end">
+        {
+          data && data.dataIDs && 
+            data.dataIDs.map(id => data.data[id].external ?
+              makeExternalLink(data.data[id].title, data.data[id].dest, theme) :
+              makeLink(data.data[id].title, data.data[id].dest, theme))
+        }
       </div>
     </Block>
   );

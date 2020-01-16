@@ -100,7 +100,8 @@ const faqData = [
             buttonText="Go to Application"
             buttonDest="/apply-app"
             theme="primary"
-            height="475px"
+            height="575px"
+            img="https://res.cloudinary.com/berkeleypse-tech/image/upload/v1579173755/website/apply_info/header1.png"
             />
 
           <Letter
@@ -125,6 +126,7 @@ const faqData = [
             title="Pre-Registration" 
             theme="primary"
             height="300px"
+            img="https://res.cloudinary.com/berkeleypse-tech/image/upload/f_auto,fl_force_strip.progressive,q_auto:best/website/apply_info/header2.png"
             />
 
           {/*<CallToAction 
@@ -141,6 +143,7 @@ const faqData = [
             title="FAQ" 
             theme="primary"
             height="300px"
+            img="https://res.cloudinary.com/berkeleypse-tech/image/upload/f_auto,fl_force_strip.progressive,q_auto:best/website/apply_info/header3.png"
             />
 
           <FAQ 

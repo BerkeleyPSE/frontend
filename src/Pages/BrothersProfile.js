@@ -76,6 +76,7 @@ class BrothersProfile extends React.Component {
           title="The Brothers" 
           theme="primary"
           height="225px"
+          img="https://res.cloudinary.com/berkeleypse-tech/image/upload/v1579172691/website/brothers_profile/header1.png"
           />
 
         <SubNavBar

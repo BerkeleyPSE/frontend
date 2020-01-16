@@ -78,7 +78,8 @@ class Brothers extends React.Component {
         <Header 
           title="Meet the Brothers" 
           theme="primary"
-          height="425px"
+          height="475px"
+          img="https://res.cloudinary.com/berkeleypse-tech/image/upload/q_auto:best/website/brothers/header1.png"
           />
 
         <TeamBlock 

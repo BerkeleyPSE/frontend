@@ -131,6 +131,12 @@ img {
 }
 
 .teamMemberBlock {
+  img {
+    max-width: 400px;
+    @include media-breakpoint-up(md) {
+      max-width: 500px;
+    }
+  }
   .content {
     .entry {
       h4 {
@@ -202,19 +208,20 @@ img {
 
 .primary {
   color: map-get($theme-colors, "light");
-  background-color: map-get($theme-colors, "purple-med");
+  background-color: map-get($theme-colors, "dark");
 
   .btn {
     color: map-get($theme-colors, "light");
-    background-color: map-get($theme-colors, "purple-med");
+    background-color: map-get($theme-colors, "dark");
+    border-color: map-get($theme-colors, "dark"); 
 
     &:active {
-      color: map-get($theme-colors, "purple-med") ;
+      color: map-get($theme-colors, "dark") ;
       background-color: map-get($theme-colors, "light") ;
-      border-color: map-get($theme-colors, "purple-med") ;
+      border-color: map-get($theme-colors, "dark") ;
     }
     &:hover {
-      border-color: map-get($theme-colors, "purple-med"); 
+      border-color: map-get($theme-colors, "light"); 
     }
   }
 }
@@ -225,15 +232,16 @@ img {
 
   .btn {
     color: map-get($theme-colors, "light");
-    background-color: map-get($theme-colors, "purple-med");
+    background-color: map-get($theme-colors, "dark");
+    border-color: map-get($theme-colors, "light"); 
 
     &:active {
-      color: map-get($theme-colors, "light") ;
-      background-color: map-get($theme-colors, "purple-med") ;
-      border-color: map-get($theme-colors, "light") ;
+      color: map-get($theme-colors, "dark") ;
+      background-color: map-get($theme-colors, "light") ;
+      border-color: map-get($theme-colors, "dark") ;
     }
     &:hover {
-      border-color: map-get($theme-colors, "light"); 
+      border-color: map-get($theme-colors, "dark"); 
     }
   }
 }

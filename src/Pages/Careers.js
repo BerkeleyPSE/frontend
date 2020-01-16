@@ -88,6 +88,7 @@ class Careers extends React.Component {
           body="Our brothers boast a broad and rigorus collection of career paths"
           theme="primary"
           height="425px"
+          img="https://res.cloudinary.com/berkeleypse-tech/image/upload/f_auto,fl_force_strip.progressive,q_auto:best/website/careers/header1.png"
           />
 
         <SubNavBar

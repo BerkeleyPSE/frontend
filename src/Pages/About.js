@@ -22,6 +22,7 @@ export default function Home() {
         body="Learn about our Chapter and Fraternity History"
         theme="primary"
         height="525px"
+        img="https://res.cloudinary.com/berkeleypse-tech/image/upload/f_auto,fl_force_strip.progressive,q_auto:best/website/about/header1.png"
         />
 
       <InfoBlock 
@@ -37,6 +38,7 @@ export default function Home() {
       <Header 
         theme="primary"
         height="425px"
+        img="https://res.cloudinary.com/berkeleypse-tech/image/upload/f_auto,fl_force_strip.progressive,q_auto:best/website/about/header2.png"
         />
 
       <InfoBlock 
