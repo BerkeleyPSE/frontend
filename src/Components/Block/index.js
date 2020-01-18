@@ -12,12 +12,11 @@ const Block = props => {
 
   if (img) {
     style.backgroundColor = "transparent" ;
-    if (window.innerWidth > 1100) {
-      return (
+    return (
         <Parallax
           className=""
           bgImage={img}
-          strength={250}
+          strength={500}
           style={{marginRight: "-15px", marginLeft: "-15px"}}
           >
           <div 
@@ -27,30 +26,7 @@ const Block = props => {
             {children}
           </div>
         </Parallax>
-      )
-    } else if (window.innerWidth > 768) {
-      return (
-        <Parallax
-          className=""
-          bgImage={img}
-          strength={150}
-          style={{marginRight: "-15px", marginLeft: "-15px"}}
-          >
-          <div 
-            className={`block row ${small ? "py-3" : ""} px-3 px-md-5 ${theme} ${className}`} 
-            style={ style }
-            >
-            {children}
-          </div>
-        </Parallax>
-      )
-    } else {
-      style.backgroundImage = `url(${img})` ;
-      style.backgroundSize = "cover";
-      style.backgroundPosition = "center";
-      style.backgroundRepeat = "no-repeat";
-    }
-    
+      );
   }
 
   return (
