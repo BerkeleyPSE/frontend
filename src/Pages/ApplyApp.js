@@ -16,7 +16,7 @@ import { LetterData, AppData } from '../Data';
           theme="primary"
           >
           <Helmet>
-            <title>Pi Sigma Eplison - Application Info</title>
+            <title>Pi Sigma Epsilon - Application Info</title>
           </Helmet>
           <Header 
             title={`${season} Recruitment ${year}`} 

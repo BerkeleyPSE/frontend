@@ -7,7 +7,7 @@ import Button from '../Button';
 
 const genImg = img => (
   <div className="col-12 my-4">
-    <img src={ img } />
+    <img src={ img } style={{maxHeight: "500px"}}/>
   </div>
 );
 

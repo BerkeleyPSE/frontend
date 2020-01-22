@@ -80,7 +80,7 @@ class Careers extends React.Component {
         theme="primary"
         >
         <Helmet>
-          <title>Pi Sigma Eplison - Careers</title>
+          <title>Pi Sigma Epsilon - Careers</title>
         </Helmet>
 
         <Header 

@@ -119,10 +119,10 @@ const careerCompanies = [
           theme="primary"
           >
           <Helmet>
-            <title>Pi Sigma Eplison - UC Berkeley’s Marketing & Business Fraternity</title>
+            <title>Pi Sigma Epsilon - UC Berkeley’s Marketing & Business Fraternity</title>
           </Helmet>
           <Header 
-            title="Pi Sigma Eplison" 
+            title="Pi Sigma Epsilon" 
             body="UC Berkeley’s Marketing & Business Fraternity"
             buttonText={`${season} Recruitment ${year}`}
             buttonDest="/apply-info"

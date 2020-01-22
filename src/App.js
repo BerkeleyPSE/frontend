@@ -17,8 +17,8 @@ class App extends React.Component {
     return (
       <div>
         <Helmet>
-          <title>Pi Sigma Eplison - UC Berkeley’s Marketing & Business Fraternity</title>
-          <meta name="description" content="Pi Sigma Eplison - UC Berkeley’s Marketing & Business Fraternity" />
+          <title>Pi Sigma Epsilon - UC Berkeley’s Marketing & Business Fraternity</title>
+          <meta name="description" content="Pi Sigma Epsilon - UC Berkeley’s Marketing & Business Fraternity" />
           <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Raleway&display=swap" rel="stylesheet"/>
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 

@@ -13,17 +13,26 @@
       text-decoration: none;
     }
 
-    .img {
+    .imgWrapper {
       height: 300px;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
+      width: 200px;
+      overflow: hidden;
+      img {
+        max-height: 300px;
+        // object-fit: cover; //takes too long to load
+        overflow: unset;
+        
+        // background-repeat: no-repeat;
+        // background-position: center;
+        // background-size: cover;
+        // max-width: none;
 
-      &.private {
-        // transition: .1s ease-out;
-        opacity: 0;
-        &:hover {
-          opacity: 1;
+        &.private {
+          transition: 0s ease-out;
+          opacity: 0;
+          &:hover {
+            opacity: 1;
+          }
         }
       }
     }
@@ -34,10 +43,10 @@
     }
 
     &:hover {
-      opacity: .85;
-      p {
-        filter: invert(1);
-      }
+      opacity: .9;
+      // p {
+      //   filter: invert(1);
+      // }
     }
 
     &.dummy {

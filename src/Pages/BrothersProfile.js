@@ -70,7 +70,7 @@ class BrothersProfile extends React.Component {
         theme="primary"
         >
         <Helmet>
-          <title>Pi Sigma Eplison - Meet the Brothers</title>
+          <title>Pi Sigma Epsilon - Meet the Brothers</title>
         </Helmet>
         <Header 
           title="The Brothers" 

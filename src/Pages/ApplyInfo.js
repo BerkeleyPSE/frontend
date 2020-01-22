@@ -92,7 +92,7 @@ const faqData = [
           theme="primary"
           >
           <Helmet>
-            <title>Pi Sigma Eplison - Application Info</title>
+            <title>Pi Sigma Epsilon - Application Info</title>
           </Helmet>
           <Header 
             title={`${season} Recruitment ${year}`} 
@@ -114,9 +114,9 @@ const faqData = [
 
           <CallToAction 
             title="Follow our Facebook event"
-            img="https://drive.google.com/uc?export=view&id=1WPI_xT_fvSaAZHHdRAyg9DnAT1jlz0rO"
+            img="https://res.cloudinary.com/berkeleypse-tech/image/upload/v1579654008/website/apply_info/timeline.jpg"
             button="RSVP"
-            buttonDest="https://www.facebook.com/events/354465682108836/?event_time_id=355084428713628"
+            buttonDest="https://www.facebook.com/events/406199883509827/"
             buttonExternal={ true }
             theme="secondary"
             >
@@ -125,7 +125,7 @@ const faqData = [
           <Header 
             title="Pre-Registration" 
             theme="primary"
-            height="300px"
+            height="450px"
             img="https://res.cloudinary.com/berkeleypse-tech/image/upload/f_auto,fl_force_strip.progressive,q_auto:best/website/apply_info/header2.png"
             />
 
@@ -142,7 +142,7 @@ const faqData = [
           <Header 
             title="FAQ" 
             theme="primary"
-            height="300px"
+            height="450px"
             img="https://res.cloudinary.com/berkeleypse-tech/image/upload/f_auto,fl_force_strip.progressive,q_auto:best/website/apply_info/header3.png"
             />
 

@@ -9,7 +9,7 @@ export default function Contact() {
       theme="primary"
       >
       <Helmet>
-        <title>Pi Sigma Eplison - Contact</title>
+        <title>Pi Sigma Epsilon - Contact</title>
       </Helmet>
       <Header 
         title="Contact" 
