@@ -37,7 +37,7 @@ class MemberIcon extends React.Component {
 
   unHover() {
     this.setState((state, props) => ({
-        src: `https://res.cloudinary.com/berkeleypse-tech/image/upload/f_auto,fl_force_strip.progressive,q_auto:best/brothers/${this.props.brother.key}.jpg`
+        src: `https://res.cloudinary.com/berkeleypse-tech/image/upload/fl_force_strip.progressive,q_auto:best/brothers/${this.props.brother.key}.jpg`
       }));
   }
 
