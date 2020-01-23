@@ -12,6 +12,7 @@ function postSheetsData(sheetId, sheetName, callback, data) {
 }
 
 function getData(sheetId, sheetName, callback) {
+  console.log( "key", key.slice(0,5), "..." );
   return () => window.gapi.client
     .init({
       'apiKey': key,

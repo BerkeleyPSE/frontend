@@ -114,7 +114,7 @@ const faqData = [
 
           <CallToAction 
             title="Follow our Facebook event"
-            img="https://res.cloudinary.com/berkeleypse-tech/image/upload/v1579654008/website/apply_info/timeline.jpg"
+            img="https://res.cloudinary.com/berkeleypse-tech/image/upload/f_auto,fl_force_strip.progressive,q_auto:best/website/apply_info/timeline.jpg"
             button="RSVP"
             buttonDest="https://www.facebook.com/events/406199883509827/"
             buttonExternal={ true }
