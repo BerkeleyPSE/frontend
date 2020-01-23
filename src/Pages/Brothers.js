@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from "react-helmet";
 import '../custom.scss';
 import { PageTemplate, Header, TeamBlock } from '../Components';
+import { BrothersData } from '../Data';
 
 const axios = require('axios');
 
@@ -29,14 +30,20 @@ class Brothers extends React.Component {
     };
     this.getActives = this.getActives.bind(this);
     this.getEboard = this.getEboard.bind(this);
+  }
+
+  componentDidMount() {
     this.getActives();
     this.getEboard();
   }
 
   async getActives() {
     try {
-      const rsp = await axios.get("http://api.berkeleypse.org/brothers/all");
-      const rv = rsp.data.data;
+      // TODO: FIX API
+      // const rsp = await axios.get("http://api.berkeleypse.org/brothers/all");
+      // const rv = rsp.data.data;
+      const rv = BrothersData.brothers.data;
+
       rv.sort(sortLastName);
       this.setState({
         activeData: rv
@@ -49,8 +56,11 @@ class Brothers extends React.Component {
 
   async getEboard() {
     try {
-      const rsp = await axios.get("http://api.berkeleypse.org/brothers/executives");
-      const rv = rsp.data.data;
+      // TODO: FIX API
+      // const rsp = await axios.get("http://api.berkeleypse.org/brothers/executives");
+      // const rv = rsp.data.data;
+      const rv = BrothersData.executives.data;
+
       rv.sort(sortLastName);
       this.setState({
         eboardData: rv

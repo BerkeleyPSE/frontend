@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from "react-helmet";
 import '../custom.scss';
 import { Header, CallToAction, ListBlock, PageTemplate, Letter, ContactBlock, Block } from '../Components';
-import { LetterData, AppData } from '../Data';
+import { LetterData, AppData, BrothersData } from '../Data';
 
 const axios = require('axios');
 
@@ -67,14 +67,19 @@ const careerCompanies = [
       }
       this.getPresidentPhoto = this.getPresidentPhoto.bind(this);
       this.getHomeLetterData = this.getHomeLetterData.bind(this);
+    }
+
+    componentDidMount() {
       this.getPresidentPhoto();
       this.getHomeLetterData();
     }
 
     async getPresidentPhoto() {
       try {
-        const rsp = await axios.get("http://api.berkeleypse.org/brothers/executives");
-        const rv = rsp.data.data;
+        // TODO: FIX API
+        // const rsp = await axios.get("http://api.berkeleypse.org/brothers/executives");
+        // const rv = rsp.data.data;
+        const rv = BrothersData.executives.data;
 
         for (var i = rv.length - 1; i >= 0; i--) {
           const exec = rv[i];

@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from "react-helmet";
 import '../custom.scss';
 import { PageTemplate, Header, TeamMemberBlock, SubNavBar } from '../Components';
+import { BrothersData } from '../Data';
 
 const axios = require('axios');
 
@@ -50,14 +51,18 @@ class BrothersProfile extends React.Component {
       data: []
     };
     this.getData = this.getData.bind(this);
-    this.getData(props.brotherKey)
+  }
+
+  componentDidMount() {
+    this.getData(this.props.brotherKey)
   }
 
   async getData(key) {
     try {
-      const rsp = await axios.get(`http://api.berkeleypse.org/brothers/key/${key}`);
+      // TODO: FIX API
+      // const rsp = await axios.get(`http://api.berkeleypse.org/brothers/key/${key}`);
       this.setState({
-        data: rsp.data.data
+        data: BrothersData.brothersData.data[key]
       });
     } catch (err) {
       console.error(err);
