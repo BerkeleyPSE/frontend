@@ -8,7 +8,7 @@ import SocialIcon from '../SocialIcon'
 
 const checkEmpty = val => typeof(val) == "object" ? !!val.length : !!val;
 
-const genRow = (label, value) => checkEmpty(value) && label != "year" &&
+const genRow = (label, value) => checkEmpty(value) && label != "Year" &&
   <div className="row entry py-1 mx-0 px-0">
     <div className="col-6 attr d-flex align-items-center mx-0 px-0"><h4>{ label.toUpperCase() }</h4></div>
     <div className="col-6 val d-flex align-items-center">
